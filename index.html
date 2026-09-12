@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>American Producer — March 1969</title>
+<meta name="description" content="A cinematic reconstruction of the March 1969 SS American Producer allision with Pier 27-29, San Francisco. Footage generated with MiniMax H3.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<style>
+:root{--gold:#C9B07A;--cream:#EFE7D6;--fog:#9FB0C2;--black:#030508;--serif:'Cinzel',Georgia,'Times New Roman',serif;--text:'Cormorant Garamond',Georgia,'Times New Roman',serif;--bar:54px}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;height:100%;background:var(--black);color:var(--cream);overflow:hidden;font-family:var(--text);-webkit-font-smoothing:antialiased}
+#stage{position:fixed;inset:0;background:#000;display:flex;align-items:center;justify-content:center}
+#stage video{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:100%;height:100%;object-fit:cover;opacity:0}
+#stage video.on{opacity:1}
+body.render #stage,body.render #bar,body.render #hint{display:none}
+html.render,body.render{background:transparent}
+#overlay{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:7}
+.card{position:absolute;opacity:0;will-change:opacity}
+#lb-top,#lb-bot{position:absolute;left:0;right:0;height:0;background:#000}
+#lb-top{top:0}#lb-bot{bottom:0}
+@media (min-aspect-ratio:16/10){#lb-top,#lb-bot{height:0}}
+.eyebrow{top:calc(6.5vh + 28px);left:0;right:0;text-align:center;font-family:var(--serif);font-weight:400;font-size:clamp(9px,1vw,13px);letter-spacing:.5em;text-transform:uppercase;color:var(--fog);text-shadow:0 1px 10px rgba(0,0,0,.9)}
+.main{top:calc(50% - var(--bar)/2);left:0;right:0;transform:translateY(-50%);text-align:center;font-family:var(--serif);font-weight:600;font-size:clamp(20px,3.6vw,48px);letter-spacing:.28em;text-transform:uppercase;color:var(--cream);text-shadow:0 2px 30px rgba(0,0,0,.9);padding:0 24px;line-height:1.15}
+.main small{display:block;margin-top:.9em;font-family:var(--serif);font-weight:400;font-size:clamp(9px,1.05vw,14px);letter-spacing:.45em;color:var(--gold)}
+.main:before,.main:after{content:"";display:block;width:64px;height:1px;background:var(--gold);margin:0 auto 18px;opacity:.8}
+.main:after{margin:18px auto 0}
+.main.notitle:before,.main.notitle:after{display:none}
+.tblock{position:absolute;top:calc(6.5vh + 64px);left:0;right:0;text-align:center}
+.tblock .card{position:static}
+.title{font-family:var(--serif);font-weight:600;font-size:clamp(20px,3.4vw,46px);letter-spacing:.22em;text-transform:uppercase;color:var(--cream);text-shadow:0 2px 26px rgba(0,0,0,.95);padding:0 20px;line-height:1.15}
+.title .rule{display:block;width:56px;height:1px;background:var(--gold);margin:14px auto 0;opacity:.85}
+.detail{margin-top:14px;text-align:center;font-family:var(--text);font-style:italic;font-weight:400;font-size:clamp(13px,1.45vw,20px);letter-spacing:.06em;color:var(--cream);text-shadow:0 1px 10px rgba(0,0,0,.95);padding:0 20px}
+.detail .line{display:block;margin:.28em 0;line-height:1.45;opacity:0}
+.narrative{bottom:calc(var(--bar) + 6.5vh + 22px);left:50%;transform:translateX(-50%);width:min(680px,calc(100% - 40px));text-align:center;font-family:var(--text);font-style:italic;font-weight:400;font-size:clamp(15px,1.75vw,24px);line-height:1.5;color:var(--cream);text-shadow:0 1px 12px rgba(0,0,0,.95),0 0 30px rgba(0,0,0,.7);padding:.3em 1em}
+.narrative.left{left:max(4vw,22px);transform:none;text-align:left;width:min(500px,52%)}
+#impact{top:calc(50% - var(--bar)/2);left:0;right:0;transform:translateY(-50%);text-align:center;font-family:var(--serif);font-weight:400;color:#F4EEE2;font-size:clamp(30px,6.4vw,72px);letter-spacing:.42em;padding-left:.42em;text-transform:uppercase;line-height:1;text-shadow:0 0 40px rgba(255,220,180,.35),0 2px 24px rgba(0,0,0,.9)}
+#impact small{display:block;margin-top:1em;font-family:var(--serif);font-size:clamp(9px,1.05vw,14px);letter-spacing:.4em;padding-left:.4em;color:var(--gold)}
+#impact:before,#impact:after{content:"";display:block;width:90px;height:1px;background:rgba(244,238,226,.7);margin:0 auto 26px}
+#impact:after{margin:26px auto 0}
+#ring-legend{right:max(4vw,22px);top:calc(50% - var(--bar)/2);transform:translateY(-50%);width:min(270px,40vw);font-family:var(--text);font-size:clamp(12px,1.2vw,16px);line-height:1.45;color:var(--cream);background:rgba(3,5,8,.55);border-left:1px solid rgba(201,176,122,.5);padding:12px 16px;text-shadow:0 1px 4px #000}
+#ring-legend h4{margin:0 0 10px;font-family:var(--serif);font-weight:400;letter-spacing:.35em;font-size:.72em;color:var(--gold);text-transform:uppercase}
+#ring-legend div{display:grid;grid-template-columns:10px auto;gap:0 10px;align-items:start;margin:6px 0}
+#ring-legend i{display:block;width:10px;height:10px;border-radius:50%;margin-top:5px;box-shadow:0 0 6px currentColor}
+#ring-legend b{font-family:var(--serif);font-weight:400;font-size:.8em;letter-spacing:.18em}
+#ring-legend span{display:block}
+#rings{position:absolute;inset:0;width:100%;height:100%}
+#rings circle{fill:none;stroke-width:1.5;opacity:0}
+#endcards{top:calc(50% - var(--bar)/2);left:50%;transform:translate(-50%,-50%);width:min(760px,calc(100% - 40px));text-align:center;opacity:1}
+#endcards p{margin:.5em 0;font-family:var(--text);font-size:clamp(14px,1.65vw,22px);letter-spacing:.08em;line-height:1.5;color:var(--cream);opacity:0;text-shadow:0 1px 10px #000}
+#endcards p.sp{height:.5em;margin:0}
+#endcards p.stars{font-family:var(--serif);font-size:clamp(10px,1.15vw,15px);letter-spacing:.3em;color:var(--gold)}
+#endcards p.final{font-family:var(--serif);font-weight:400;font-size:clamp(20px,3.2vw,42px);letter-spacing:.3em;padding-left:.3em;text-transform:uppercase;color:var(--cream);margin-top:.8em;line-height:1.2}
+#endcards p.src{font-family:var(--serif);font-size:clamp(8px,.9vw,12px);letter-spacing:.32em;color:var(--fog);margin-top:2.2em;text-transform:uppercase}
+#flash{position:absolute;inset:0;background:#fff;opacity:0}
+#fade{position:absolute;inset:0;background:#000;opacity:0}
+#bar{position:fixed;left:0;right:0;bottom:0;height:var(--bar);display:flex;align-items:center;gap:14px;padding:0 18px;background:linear-gradient(180deg,rgba(3,5,8,0),rgba(3,5,8,.85));font-family:var(--serif);color:var(--cream);z-index:10;transition:opacity .6s;user-select:none;-webkit-user-select:none}
+#bar.hide{opacity:0;pointer-events:none}
+#bar button{background:none;border:0;color:var(--gold);font-family:var(--serif);font-size:11px;letter-spacing:.3em;padding:6px 8px;cursor:pointer;min-width:34px;height:32px;line-height:1;text-transform:uppercase;opacity:.9}
+#bar button:hover{opacity:1;text-shadow:0 0 8px rgba(201,176,122,.6)}
+#play{font-size:13px;letter-spacing:0}
+#progress{flex:1;position:relative;height:26px;cursor:pointer}
+#progress .track{position:absolute;left:0;right:0;top:12px;height:1px;background:rgba(239,231,214,.25)}
+#progress .fill{position:absolute;left:0;top:12px;height:1px;width:0;background:var(--gold);box-shadow:0 0 6px rgba(201,176,122,.6)}
+#progress .mk{position:absolute;top:9px;width:1px;height:7px;background:rgba(239,231,214,.5)}
+#progress .mk:hover:after{content:attr(data-name);position:absolute;bottom:14px;left:0;transform:translateX(-50%);font-size:9px;letter-spacing:.3em;white-space:nowrap;color:var(--gold);background:rgba(3,5,8,.85);padding:3px 8px;text-transform:uppercase}
+#progress .head{position:absolute;top:9px;width:7px;height:7px;border-radius:50%;background:var(--cream);transform:translateX(-3.5px);box-shadow:0 0 6px #000}
+#time{font-size:10px;letter-spacing:.25em;min-width:84px;text-align:right;color:var(--fog);font-variant-numeric:tabular-nums}
+@media (max-width:560px){#reset span,#snd span{display:none}#time{min-width:64px;font-size:9px}#bar{gap:8px;padding:0 10px}.detail{font-size:12px}}
+#hint{z-index:11;position:fixed;left:50%;bottom:calc(var(--bar) + 10px);transform:translateX(-50%);font-family:var(--serif);font-size:9px;letter-spacing:.4em;color:var(--fog);opacity:0;transition:opacity .8s;pointer-events:none;text-transform:uppercase;text-shadow:0 1px 6px #000}
+#error{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:var(--black);color:var(--cream);font-family:var(--text);padding:24px;text-align:center;line-height:1.6;z-index:20;font-size:18px}
+</style>
+</head>
+<body>
+<div id="stage"></div>
+
+<div id="overlay">
+  <div id="lb-top"></div><div id="lb-bot"></div>
+  <div id="flash"></div>
+  <div id="fade"></div>
+  <div class="card eyebrow" id="ey1">San Francisco Bay</div>
+  <div class="card main notitle" id="m1">March 1969<small>A reconstruction</small></div>
+
+  <div class="tblock">
+    <div class="card title" id="t2">American Producer<span class="rule"></span></div>
+    <div class="card detail" id="d2">
+      <span class="line" id="d2a">United States Lines · Loaded at Port Chicago · Bound for Da Nang, Vietnam</span>
+      <span class="line" id="d2b">A full load of bombs · 13,910 tons · One propeller · 6,000 shaft horsepower</span>
+      <span class="line" id="d2c">Built Oakland 1942 as SS Twilight · Ex-USS Ormsby, APA-49 · Six battle stars · 27 years old</span>
+    </div>
+  </div>
+
+  <div class="card eyebrow" id="ey3">Converging</div>
+  <div class="card narrative" id="n3">Three ships working the same stretch of the Embarcadero: the Afoundria inbound from the Gate for Oakland, the Washington up from Anchorage 9 to dock at Pier 15-17, and the American Producer, down from Port Chicago, bound for Anchorage 9 for bunkers.</div>
+
+  <div class="card eyebrow" id="ey4">Down bound</div>
+  <div class="card narrative" id="n4a">Six thousand shaft horsepower. One propeller. No bow thruster.</div>
+  <div class="card narrative" id="n4b">Loaded near her full displacement, she was sluggish. The swing toward Anchorage 9 begins.</div>
+
+  <div class="card eyebrow" id="ey5">The turn</div>
+  <div class="card narrative" id="n5a">She cannot complete the turn.</div>
+  <div class="card narrative" id="n5b">Four hundred fifty-nine feet of ship. Four knots. No way to stop.</div>
+
+  <div class="card" id="impact">Allision<small>Pier 27-29 · The Embarcadero · March 1969</small></div>
+
+  <svg id="rings" viewBox="0 0 1000 420" preserveAspectRatio="xMidYMid slice">
+    <circle id="r1" cx="500" cy="300" r="60" stroke="#E84A2E"/>
+    <circle id="r2" cx="500" cy="300" r="120" stroke="#E87830"/>
+    <circle id="r3" cx="500" cy="300" r="240" stroke="#E8A830"/>
+    <circle id="r4" cx="500" cy="300" r="300" stroke="#C9B07A"/>
+  </svg>
+  <div class="card eyebrow" id="ey7">What could have been</div>
+  <div class="card narrative left" id="n7a">A full load of bombs, bound for Vietnam, against a wooden pier.</div>
+  <div class="card narrative left" id="n7b">The Chronicle's hazard map: total destruction from the pier north to Broadway and south to the Ferry Building. Chinatown, North Beach and Telegraph Hill in the heavy zone. The Bay Bridge itself in the moderate zone, effects reaching Oakland and Berkeley.</div>
+  <div class="card narrative left" id="n7c">Port Chicago, 1944: 4,600 tons of munitions, thirty-five miles away, shattered windows across the Bay Area and killed 320 men.</div>
+  <div class="card" id="ring-legend">
+    <h4>Devastation zone</h4>
+    <div><i style="background:#E84A2E;color:#E84A2E"></i><span><b>SEVERE</b> · 0–0.25 mi (1,320 ft)<br>Total structural failure</span></div>
+    <div><i style="background:#E87830;color:#E87830"></i><span><b>HEAVY</b> · 0.25–0.5 mi<br>Structural damage, window failure, fires</span></div>
+    <div><i style="background:#E8A830;color:#E8A830"></i><span><b>MODERATE</b> · 0.5–1.0 mi<br>Broken windows, light structural damage</span></div>
+    <div><i style="background:#C9B07A;color:#C9B07A"></i><span><b>OUTER</b> · 1.25 mi (6,600 ft)<br>Severe to moderate effects possible</span></div>
+  </div>
+
+  <div class="card eyebrow" id="ey8">The grey ship</div>
+  <div class="tblock">
+    <div class="card title" id="t8" style="font-size:clamp(17px,2.6vw,36px)">SS Washington<span class="rule"></span></div>
+    <div class="card detail" id="d8">
+      <span class="line" id="d8a">States Lines · California class · Newport News, 1962 · 565 feet</span>
+      <span class="line" id="d8b">Up from Anchorage 9, docking starboard side to at Pier 15-17, just west of the Bay Bridge. Her crew watched it happen.</span>
+      <span class="line" id="d8c">Later SS Mormacwave · Desert Storm veteran · Scrapped Brownsville, Texas, 2005</span>
+    </div>
+  </div>
+
+  <div class="card eyebrow" id="ey9">Aftermath</div>
+  <div class="card narrative" id="n9">The fire department foamed the dock against sparks. A tug put a towline on her stern and pulled her off. She was escorted back to Port Chicago to discharge.</div>
+  <div class="card" id="endcards">
+    <p id="e1">SS American Producer — declared a total loss.</p>
+    <p id="e2">Sold for scrapping to Mitsui &amp; Co., May 22, 1969.</p>
+    <p id="e3">Scrapped at Kaohsiung, Taiwan, July 1969.</p>
+    <p class="sp"></p>
+    <p id="e4">She had earned six battle stars in the Second World War.</p>
+    <p id="e5" class="stars">Tarawa · Kwajalein · Aitape · Guam · Peleliu · Leyte</p>
+    <p class="sp"></p>
+    <p id="e6">Her last cargo never reached Da Nang.</p>
+    <p class="sp"></p>
+    <p id="e7" class="final">San Francisco was spared by chance.</p>
+    <p id="e8" class="src">SF Chronicle, March 1969 · USCG Marine Board of Investigation track diagram · MARAD vessel records · SS Washington crew account · The exact date in March 1969 remains unconfirmed · Footage generated with MiniMax H3</p>
+  </div>
+</div>
+
+<div id="hint">Tap for sound</div>
+<div id="bar">
+  <button id="play" title="Play / Pause (space)">❚❚</button>
+  <div id="progress"><div class="track"></div><div class="fill"></div><div class="head"></div></div>
+  <button id="reset" title="Restart">↺ <span>Restart</span></button>
+  <button id="snd" title="Sound">◌ <span>Sound</span></button>
+  <div id="time">0:00 / 1:32</div>
+</div>
+<div id="error"><div>This film needs GSAP (from cdnjs) and its clip files in <code>american_producer_1969_media/</code>.</div></div>
+
+<script>
+(function(){
+'use strict';
+if(!window.GSAP&&!window.gsap){document.getElementById('error').style.display='flex';return;}
+const $=id=>document.getElementById(id);
+const clamp=(v,a,b)=>v<a?a:v>b?b:v,lerp=(a,b,t)=>a+(b-a)*t;
+const RENDER=/[?&]render=1/.test(location.search);
+if(RENDER){document.documentElement.classList.add('render');document.body.classList.add('render');}
+const MEDIA='american_producer_1969_media/';
+/* ------------------------------------------------ shot list (footage) */
+const SHOTS=[
+  {n:1,file:'shot1_dawn.mp4',start:0,dur:10,name:'Dawn'},
+  {n:2,file:'shot2_portchicago.mp4',start:10,dur:10,name:'Port Chicago'},
+  {n:3,file:'shot3_converging.mp4',start:20,dur:8,name:'Converging'},
+  {n:4,file:'shot4_downbound.mp4',start:28,dur:10,name:'Down Bound'},
+  {n:5,file:'shot5_turn.mp4',start:38,dur:10,name:'The Turn'},
+  {n:6,file:'shot6_impact.mp4',start:48,dur:8,name:'Allision'},
+  {n:7,file:'shot7_pullback.mp4',start:56,dur:8,name:'What Could Have Been'},
+  {n:8,file:'shot8_washington.mp4',start:64,dur:6,name:'The Grey Ship'},
+  {n:9,file:'shot9_aftermath.mp4',start:70,dur:8,name:'Aftermath'}
+];
+const DUR=92,IMPACT_T=51.5;
+const stage=$('stage');
+if(!RENDER){SHOTS.forEach(s=>{const v=document.createElement('video');v.src=MEDIA+s.file;v.muted=true;v.playsInline=true;v.preload='auto';v.setAttribute('playsinline','');v.id='v'+s.n;stage.appendChild(v);s.el=v;});}
+
+/* ----------------------------------------------------- overlay timeline */
+const tl=gsap.timeline({paused:true,defaults:{ease:'power1.inOut',immediateRender:false}});
+const show=(id,t,d)=>tl.to('#'+id,{opacity:1,duration:d||1},t);
+const hide=(id,t,d)=>tl.to('#'+id,{opacity:0,duration:d||0.8},t);
+const dip=(t,d)=>{const dd=d||0.5;tl.to('#fade',{opacity:1,duration:dd,ease:'power1.in'},t-dd);tl.to('#fade',{opacity:0,duration:dd*1.6,ease:'power1.out'},t);};
+tl.fromTo('#fade',{opacity:1},{opacity:0,duration:2.6},0);
+/* 1 · dawn */
+show('ey1',1.2,1.4);hide('ey1',5,0.8);show('m1',4.2,1.6);hide('m1',9.2,0.8);dip(10);
+/* 2 · the pier */
+show('t2',11.2,1.4);show('d2a',12.8,1);show('d2b',14.6,1);show('d2c',16.4,1);tl.set('#d2',{opacity:1},12.6);hide('t2',19.3,0.6);hide('d2',19.3,0.6);dip(20);
+/* 3 · converging */
+show('ey3',20.5,1);hide('ey3',27.4,0.5);show('n3',21,1);hide('n3',27.4,0.5);dip(28);
+/* 4 · casting off */
+show('ey4',28.5,1);hide('ey4',37.4,0.5);show('n4a',29,1);hide('n4a',33.5,0.6);show('n4b',34,1);hide('n4b',37.4,0.5);
+/* 5 · the turn (hard cut) */
+show('ey5',38.4,1);hide('ey5',47.4,0.5);show('n5a',38.8,1);hide('n5a',42.8,0.6);show('n5b',43.4,1);hide('n5b',47.4,0.5);
+/* 6 · allision (hard cut) */
+tl.fromTo('#flash',{opacity:0},{opacity:0.9,duration:0.06,ease:'none'},IMPACT_T);tl.to('#flash',{opacity:0,duration:0.5,ease:'power2.out'},IMPACT_T+0.06);
+show('impact',IMPACT_T+0.5,0.5);hide('impact',55.3,0.6);dip(56);
+/* 7 · what could have been */
+show('ey7',56.5,1);hide('ey7',63.4,0.5);
+[['r1',56.6],['r2',57.4],['r3',58.2],['r4',59]].forEach(r=>{tl.fromTo('#'+r[0],{opacity:0,attr:{r:1}},{opacity:0.75,attr:{r:+$(r[0]).getAttribute('r')},duration:1.8,ease:'power2.out'},r[1]);tl.to('#'+r[0],{opacity:0,duration:0.6},63.2);});
+show('n7a',56.6,0.8);hide('n7a',58.6,0.5);show('n7b',59,0.8);hide('n7b',63.5,0.5);show('ring-legend',57.5,1);hide('ring-legend',63.4,0.5);dip(64);
+/* 8 · the grey ship */
+show('ey8',64.5,1);hide('ey8',69.4,0.5);show('t8',64.8,1.2);show('d8a',65.6,1);show('d8b',66.8,1);show('d8c',68,1);tl.set('#d8',{opacity:1},65.4);hide('t8',69.4,0.5);hide('d8',69.4,0.5);dip(70);
+/* 9 · aftermath */
+show('ey9',70.5,1);hide('ey9',73.4,0.5);show('n9',71,1);hide('n9',76.6,0.6);
+[['e1',77.4],['e2',78.6],['e3',79.8],['e4',81],['e5',82],['e6',83.4],['e7',85],['e8',87]].forEach(e=>show(e[0],e[1],e[0]==='e8'?1.6:1.1));
+tl.to('#fade',{opacity:1,duration:3.2,ease:'power1.inOut'},76.4);
+tl.to('#endcards',{opacity:0,duration:1.6,ease:'power1.inOut'},DUR-1.7);
+tl.to({},{duration:0.01},DUR-0.01);
+
+/* ============================================================== audio */
+const AUTO={
+  music:[[0,0],[6,0.55],[38,0.55],[44,0.3],[48,0.3],[51.4,0],[54,0],[57,0.35],[62,0.5],[70,0.5],[72,0.15],[88,0.15],[92,0]],
+  music2:[[0,0],[70,0],[75,0.5],[88,0.5],[92,0]],
+  engine:[[0,0],[29,0],[32,1],[51.4,1],[52,0.25],[70,0.25],[71,0]]
+};
+const CUES=[['foghorn',1.2],['foghorn2',4.6],['horn',31],['braam',IMPACT_T-0.15],['impact',IMPACT_T],['groan',IMPACT_T+0.1],['bells',IMPACT_T+1.2]];
+const PULSES=(function(){const a=[];let t=41;while(t<IMPACT_T-0.2){a.push(t);t+=lerp(0.9,0.5,(t-41)/10.3);}return a;})();
+function autoValue(track,T){const k=AUTO[track];if(T<=k[0][0])return k[0][1];for(let i=1;i<k.length;i++){if(T<=k[i][0]){const a=k[i-1],b=k[i];return lerp(a[1],b[1],(T-a[0])/(b[0]-a[0]));}}return k[k.length-1][1];}
+/* builds the whole score graph on any BaseAudioContext; returns gain nodes for the continuous layers */
+function buildScore(ctx,master,offline){
+  const osc=(type,freq,dest,detune,t0)=>{const o=ctx.createOscillator();o.type=type;o.frequency.value=freq;if(detune)o.detune.value=detune;o.connect(dest);o.start(t0||0);return o;};
+  const nb=ctx.createBuffer(1,ctx.sampleRate*3,ctx.sampleRate);const d=nb.getChannelData(0);let b0=0,b1=0,b2=0;
+  for(let i=0;i<d.length;i++){const w=Math.random()*2-1;b0=0.99765*b0+w*0.099;b1=0.963*b1+w*0.2965;b2=0.57*b2+w*1.0526;d[i]=(b0+b1+b2+w*0.1848)*0.12;}
+  const src=ctx.createBufferSource();src.buffer=nb;src.loop=true;const lp=ctx.createBiquadFilter();lp.type='lowpass';lp.frequency.value=240;const g=ctx.createGain();g.gain.value=0.4;src.connect(lp);lp.connect(g);g.connect(master);src.start(0);
+  const bp=ctx.createBiquadFilter();bp.type='bandpass';bp.frequency.value=650;bp.Q.value=0.8;const g2=ctx.createGain();g2.gain.value=0.035;const lfo=ctx.createOscillator();lfo.frequency.value=0.11;const lg=ctx.createGain();lg.gain.value=0.03;lfo.connect(lg);lg.connect(g2.gain);lfo.start(0);src.connect(bp);bp.connect(g2);g2.connect(master);
+  const elp=ctx.createBiquadFilter();elp.type='lowpass';elp.frequency.value=110;const engine=ctx.createGain();engine.gain.value=0;elp.connect(engine);engine.connect(master);osc('square',42,elp);
+  const engine2=ctx.createGain();engine2.gain.value=0;engine2.connect(master);osc('sine',84,engine2);
+  const plp=ctx.createBiquadFilter();plp.type='lowpass';plp.frequency.value=420;plp.Q.value=0.8;const pad=ctx.createGain();pad.gain.value=0;plp.connect(pad);pad.connect(master);
+  [[55,-4],[55,4],[82.41,-3],[82.41,3],[110,-5],[110,5],[164.81,0],[130.81,2]].forEach(f=>{const gg=ctx.createGain();gg.gain.value=0.05;gg.connect(plp);osc('sawtooth',f[0],gg,f[1]);});
+  const plfo=ctx.createOscillator();plfo.frequency.value=0.07;const plg=ctx.createGain();plg.gain.value=140;plfo.connect(plg);plg.connect(plp.frequency);plfo.start(0);
+  const p2lp=ctx.createBiquadFilter();p2lp.type='lowpass';p2lp.frequency.value=900;const pad2=ctx.createGain();pad2.gain.value=0;p2lp.connect(pad2);pad2.connect(master);
+  [[130.81,-3],[130.81,3],[196,-2],[196,2],[261.63,0],[311.13,0]].forEach(f=>{const gg=ctx.createGain();gg.gain.value=0.05;gg.connect(p2lp);osc('triangle',f[0],gg,f[1]);});
+  const layers={engine:engine,engine2:engine2,pad:pad,pad2:pad2};
+  if(offline){
+    const ramp=(node,track,scale)=>{const k=AUTO[track];node.gain.setValueAtTime(k[0][1]*scale,0);k.forEach(p=>node.gain.linearRampToValueAtTime(p[1]*scale,p[0]));};
+    ramp(engine,'engine',0.05);ramp(engine2,'engine',0.012);ramp(pad,'music',0.12);ramp(pad2,'music2',0.1);
+    CUES.forEach(c=>cue(ctx,master,c[0],c[1]));PULSES.forEach((t,i)=>thump(ctx,master,t,lerp(0.3,1,i/(PULSES.length-1))));
+  }
+  return layers;
+}
+function env(g,t,a,peak,hold,rel){g.gain.setValueAtTime(0.0001,t);g.gain.exponentialRampToValueAtTime(peak,t+a);g.gain.setValueAtTime(peak,t+a+hold);g.gain.exponentialRampToValueAtTime(0.0001,t+a+hold+rel);}
+function cue(ctx,master,name,t){
+  const O=(type,f,dest,t0,t1,gain)=>{const o=ctx.createOscillator();o.type=type;if(typeof f==='function')f(o.frequency);else o.frequency.value=f;const og=ctx.createGain();og.gain.value=gain;o.connect(og);og.connect(dest);o.start(t0);o.stop(t1);return o;};
+  if(name==='foghorn'||name==='foghorn2'){const lp=ctx.createBiquadFilter();lp.type='lowpass';lp.frequency.value=320;const g=ctx.createGain();lp.connect(g);g.connect(master);const f=name==='foghorn'?108:90;
+    [['sine',f,0.5],['square',f,0.12],['sine',f*2,0.15],['sine',f*3,0.06]].forEach(o=>O(o[0],o[1],lp,t,t+2.6,o[2]));env(g,t,0.35,0.28,1.1,0.9);}
+  else if(name==='horn'){const lp=ctx.createBiquadFilter();lp.type='lowpass';lp.frequency.value=420;const g=ctx.createGain();lp.connect(g);g.connect(master);
+    [['sine',85,0.6],['square',85,0.25],['sawtooth',127.5,0.12],['sine',170,0.15]].forEach(o=>O(o[0],o[1],lp,t,t+2.6,o[2]));env(g,t,0.18,0.5,1.5,0.6);}
+  else if(name==='braam'){const sh=ctx.createWaveShaper();const curve=new Float32Array(256);for(let i=0;i<256;i++){const x=i/128-1;curve[i]=Math.tanh(x*2.5);}sh.curve=curve;const lp=ctx.createBiquadFilter();lp.type='lowpass';lp.frequency.value=220;const g=ctx.createGain();sh.connect(lp);lp.connect(g);g.connect(master);
+    [55,55.6,27.5,82.4].forEach(f=>O('sawtooth',fr=>{fr.setValueAtTime(f,t);fr.exponentialRampToValueAtTime(f*0.8,t+3);},sh,t,t+3.6,0.3));env(g,t,0.12,0.7,0.6,2.6);}
+  else if(name==='impact'){const buffer=ctx.createBuffer(1,ctx.sampleRate*1.5,ctx.sampleRate);const data=buffer.getChannelData(0);for(let i=0;i<data.length;i++){const tt=i/ctx.sampleRate;data[i]=((Math.random()*2-1)*Math.exp(-tt*4)+Math.sin(2*Math.PI*40*tt)*Math.exp(-tt*2)*0.8)*0.9;}
+    const s=ctx.createBufferSource();s.buffer=buffer;const lp=ctx.createBiquadFilter();lp.type='lowpass';lp.frequency.value=160;const g=ctx.createGain();g.gain.value=1.5;s.connect(lp);lp.connect(g);g.connect(master);s.start(t);
+    const s2=ctx.createBufferSource();s2.buffer=buffer;const g2=ctx.createGain();g2.gain.value=0.35;const hp=ctx.createBiquadFilter();hp.type='highpass';hp.frequency.value=900;s2.connect(hp);hp.connect(g2);g2.connect(master);s2.start(t);}
+  else if(name==='groan'){const lp=ctx.createBiquadFilter();lp.type='lowpass';lp.frequency.value=400;lp.Q.value=2;const g=ctx.createGain();lp.connect(g);g.connect(master);O('sawtooth',fr=>{fr.setValueAtTime(180,t);fr.exponentialRampToValueAtTime(80,t+3);},lp,t,t+3.4,1);env(g,t,0.25,0.28,0.4,2.6);}
+  else if(name==='bells'){for(let k=0;k<4;k++)for(let j=0;j<3;j++){const st=t+k*1.1+j*0.2;const g=ctx.createGain();g.gain.setValueAtTime(0.0001,st);g.gain.exponentialRampToValueAtTime(0.14,st+0.01);g.gain.exponentialRampToValueAtTime(0.0001,st+0.1);g.connect(master);O('sine',880,g,st,st+0.12,1);O('triangle',1760,g,st,st+0.12,1);}}
+}
+function thump(ctx,master,t,level){const o=ctx.createOscillator();o.type='sine';o.frequency.setValueAtTime(52,t);o.frequency.exponentialRampToValueAtTime(34,t+0.35);const g=ctx.createGain();o.connect(g);g.connect(master);o.start(t);o.stop(t+0.6);g.gain.setValueAtTime(0.0001,t);g.gain.exponentialRampToValueAtTime(0.55*level,t+0.02);g.gain.exponentialRampToValueAtTime(0.0001,t+0.5);}
+/* live audio */
+let AC=null,master=null,layers=null,muted=false,nextPulse=0;
+function initAudio(){if(AC||RENDER)return;const Ctx=window.AudioContext||window.webkitAudioContext;if(!Ctx)return;AC=new Ctx();const comp=AC.createDynamicsCompressor();comp.threshold.value=-18;comp.ratio.value=4;comp.attack.value=0.01;comp.release.value=0.3;comp.connect(AC.destination);master=AC.createGain();master.gain.value=0.9;master.connect(comp);layers=buildScore(AC,master,false);}
+CUES.forEach(c=>tl.call(()=>{if(AC&&!muted&&!tl.paused())cue(AC,master,c[0],AC.currentTime);},[],c[1]));
+/* offline render of the full score to a WAV (used by the MP4 assembly) */
+window.__renderScore=async function(){
+  const sr=48000;const ctx=new OfflineAudioContext(2,Math.ceil(sr*DUR),sr);const comp=ctx.createDynamicsCompressor();comp.threshold.value=-18;comp.ratio.value=4;comp.attack.value=0.01;comp.release.value=0.3;comp.connect(ctx.destination);const m=ctx.createGain();m.gain.value=0.9;m.connect(comp);
+  buildScore(ctx,m,true);const buf=await ctx.startRendering();
+  const n=buf.length,ch=buf.numberOfChannels,out=new DataView(new ArrayBuffer(44+n*ch*2));
+  const ws=(o,s)=>{for(let i=0;i<s.length;i++)out.setUint8(o+i,s.charCodeAt(i));};
+  ws(0,'RIFF');out.setUint32(4,36+n*ch*2,true);ws(8,'WAVE');ws(12,'fmt ');out.setUint32(16,16,true);out.setUint16(20,1,true);out.setUint16(22,ch,true);out.setUint32(24,sr,true);out.setUint32(28,sr*ch*2,true);out.setUint16(32,ch*2,true);out.setUint16(34,16,true);ws(36,'data');out.setUint32(40,n*ch*2,true);
+  let p=44;for(let i=0;i<n;i++)for(let c=0;c<ch;c++){const v=Math.max(-1,Math.min(1,buf.getChannelData(c)[i]));out.setInt16(p,v<0?v*32768:v*32767,true);p+=2;}
+  const bytes=new Uint8Array(out.buffer);let s='';for(let i=0;i<bytes.length;i+=8192)s+=String.fromCharCode.apply(null,bytes.subarray(i,i+8192));return btoa(s);
+};
+
+/* ================================================================ HUD */
+const prog=$('progress'),fill=prog.querySelector('.fill'),head=prog.querySelector('.head'),timeEl=$('time'),playBtn=$('play'),bar=$('bar');
+SHOTS.forEach(c=>{const m=document.createElement('div');m.className='mk';m.style.left=(c.start/DUR*100)+'%';m.dataset.name=c.name;prog.appendChild(m);});
+const fmt=s=>Math.floor(s/60)+':'+('0'+Math.floor(s%60)).slice(-2);
+function setPlaying(p){if(p){tl.play();if(AC&&!muted&&AC.state==='suspended')AC.resume();}else{tl.pause();if(AC&&AC.state==='running')AC.suspend();}playBtn.textContent=p?'❚❚':'▶';}
+function togglePlay(){if(tl.progress()>=1){tl.seek(0,true);setPlaying(true);return;}setPlaying(tl.paused());}
+function seekTo(t){tl.seek(clamp(t,0,DUR),true);nextPulse=PULSES.findIndex(p=>p>t);if(nextPulse<0)nextPulse=PULSES.length;}
+playBtn.addEventListener('click',e=>{e.stopPropagation();togglePlay();});
+$('reset').addEventListener('click',e=>{e.stopPropagation();seekTo(0);setPlaying(true);});
+function setSoundUI(){$('snd').innerHTML=(AC&&!muted?'●':'◌')+' <span>Sound</span>';}
+$('snd').addEventListener('click',e=>{e.stopPropagation();if(!AC){unlockAudio();return;}muted=!muted;if(muted)AC.suspend();else if(!tl.paused())AC.resume();setSoundUI();});
+function unlockAudio(){initAudio();if(AC&&AC.state==='suspended')AC.resume();$('hint').style.opacity=0;setSoundUI();}
+let scrubbing=false;
+function seekFromEvent(e){const r=prog.getBoundingClientRect();const x=(e.touches?e.touches[0].clientX:e.clientX)-r.left;seekTo(clamp(x/r.width,0,1)*DUR);}
+prog.addEventListener('pointerdown',e=>{e.stopPropagation();scrubbing=true;prog.setPointerCapture(e.pointerId);seekFromEvent(e);});
+prog.addEventListener('pointermove',e=>{if(scrubbing)seekFromEvent(e);});
+prog.addEventListener('pointerup',()=>{scrubbing=false;});prog.addEventListener('pointercancel',()=>{scrubbing=false;});
+bar.addEventListener('pointerdown',e=>e.stopPropagation());
+stage.addEventListener('pointerdown',()=>{togglePlay();});
+addEventListener('keydown',e=>{if(e.code==='Space'){e.preventDefault();togglePlay();}else if(e.key==='r'||e.key==='R'){seekTo(0);setPlaying(true);}else if(e.key==='m'||e.key==='M'){$('snd').click();}});
+if(!RENDER){['pointerdown','keydown','touchstart'].forEach(ev=>addEventListener(ev,unlockAudio,{once:true,passive:true}));setTimeout(()=>{if(!AC)$('hint').style.opacity=1;},1500);setTimeout(()=>{$('hint').style.opacity=0;},12000);}
+let idleT=0;function wake(){idleT=0;bar.classList.remove('hide');document.body.style.cursor='';}
+addEventListener('pointermove',wake,{passive:true});addEventListener('pointerdown',wake,{passive:true});
+
+/* ========================================================== play loop */
+function syncVideos(T,playing){
+  for(const s of SHOTS){const v=s.el;const active=T>=s.start&&T<s.start+s.dur;
+    if(active){const local=Math.min(T-s.start,s.dur-0.05);if(!v.classList.contains('on'))v.classList.add('on');
+      if(Math.abs(v.currentTime-local)>0.35&&v.readyState>=1)v.currentTime=local;
+      if(playing&&v.paused)v.play().catch(()=>{});if(!playing&&!v.paused)v.pause();}
+    else{if(v.classList.contains('on'))v.classList.remove('on');if(!v.paused)v.pause();
+      /* pre-position the next shot so the cut is clean */
+      if(T<s.start&&s.start-T<3&&v.readyState>=1&&Math.abs(v.currentTime)>0.05)v.currentTime=0;}}
+}
+function frame(){
+  requestAnimationFrame(frame);
+  const T=tl.time();const playing=!tl.paused()&&tl.progress()<1;
+  if(!RENDER)syncVideos(T,playing);
+  if(playing){idleT+=1/60;if(idleT>3&&!bar.classList.contains('hide')){bar.classList.add('hide');document.body.style.cursor='none';}}
+  if(layers){layers.engine.gain.value=autoValue('engine',T)*0.05;layers.engine2.gain.value=autoValue('engine',T)*0.012;layers.pad.gain.value=autoValue('music',T)*0.12;layers.pad2.gain.value=autoValue('music2',T)*0.1;
+    if(playing&&!muted&&nextPulse<PULSES.length&&T>=PULSES[nextPulse]){thump(AC,master,AC.currentTime,lerp(0.3,1,nextPulse/(PULSES.length-1)));nextPulse++;}}
+  const p=T/DUR;fill.style.width=(p*100)+'%';head.style.left=(p*100)+'%';timeEl.textContent=fmt(T)+' / '+fmt(DUR);
+}
+tl.eventCallback('onComplete',()=>{playBtn.textContent='▶';if(AC)AC.suspend();bar.classList.remove('hide');document.body.style.cursor='';});
+window.__film={tl:tl,DUR:DUR,seek:seekTo,SHOTS:SHOTS};
+frame();
+if(!RENDER)setPlaying(true);
+})();
+</script>
+</body>
+</html>
