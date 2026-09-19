@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>American Producer — March 1969</title>
-<meta name="description" content="A cinematic reconstruction of the March 1969 SS American Producer allision with Pier 27-29, San Francisco. Footage generated with MiniMax H3.">
+<title>American Producer — 5 March 1969</title>
+<meta name="description" content="A cinematic reconstruction of the 5 March 1969 SS American Producer allision with Pier 27-29, San Francisco. Footage generated with MiniMax H3.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
@@ -29,6 +29,11 @@ html.render,body.render{background:transparent}
 .main:before,.main:after{content:"";display:block;width:64px;height:1px;background:var(--gold);margin:0 auto 18px;opacity:.8}
 .main:after{margin:18px auto 0}
 .main.notitle:before,.main.notitle:after{display:none}
+/* Scene 1 card runs larger than the rest: it sits alone on a quiet frame and was too small to read */
+#ey1{font-size:clamp(13px,1.6vw,22px)}
+#m1{font-size:clamp(28px,5.6vw,80px);letter-spacing:.24em;text-shadow:0 2px 12px rgba(0,0,0,.95),0 2px 40px rgba(0,0,0,.9)}
+#m1 small{font-size:clamp(14px,1.9vw,26px);margin-top:.8em;text-shadow:0 1px 8px rgba(0,0,0,.95),0 1px 24px rgba(0,0,0,.9)}
+@media (max-width:560px){#m1{letter-spacing:.14em;padding:0 12px}#m1 small{letter-spacing:.3em}}
 .tblock{position:absolute;top:calc(6.5vh + 64px);left:0;right:0;text-align:center}
 .tblock .card{position:static}
 .title{font-family:var(--serif);font-weight:600;font-size:clamp(20px,3.4vw,46px);letter-spacing:.22em;text-transform:uppercase;color:var(--cream);text-shadow:0 2px 26px rgba(0,0,0,.95);padding:0 20px;line-height:1.15}
@@ -48,7 +53,7 @@ html.render,body.render{background:transparent}
 #ring-legend b{font-family:var(--serif);font-weight:400;font-size:.8em;letter-spacing:.18em}
 #ring-legend span{display:block}
 #rings{position:absolute;inset:0;width:100%;height:100%}
-#rings circle{fill:none;stroke-width:1.5;opacity:0}
+#rings ellipse{fill:none;stroke-width:1.5;opacity:0}
 #endcards{top:calc(50% - var(--bar)/2);left:50%;transform:translate(-50%,-50%);width:min(760px,calc(100% - 40px));text-align:center;opacity:1}
 #endcards p{margin:.5em 0;font-family:var(--text);font-size:clamp(14px,1.65vw,22px);letter-spacing:.08em;line-height:1.5;color:var(--cream);opacity:0;text-shadow:0 1px 10px #000}
 #endcards p.sp{height:.5em;margin:0}
@@ -82,39 +87,39 @@ html.render,body.render{background:transparent}
   <div id="flash"></div>
   <div id="fade"></div>
   <div class="card eyebrow" id="ey1">San Francisco Bay</div>
-  <div class="card main notitle" id="m1">March 1969<small>A reconstruction</small></div>
+  <div class="card main notitle" id="m1">March 5, 1969<small>A reconstruction</small></div>
 
   <div class="tblock">
     <div class="card title" id="t2">American Producer<span class="rule"></span></div>
     <div class="card detail" id="d2">
       <span class="line" id="d2a">United States Lines · Loaded at Port Chicago · Bound for Da Nang, Vietnam</span>
-      <span class="line" id="d2b">A full load of bombs · 13,910 tons · One propeller · 6,000 shaft horsepower</span>
+      <span class="line" id="d2b">A full load of bombs · One propeller · 6,000 shaft horsepower</span>
       <span class="line" id="d2c">Built Oakland 1942 as SS Twilight · Ex-USS Ormsby, APA-49 · Six battle stars · 27 years old</span>
     </div>
   </div>
 
   <div class="card eyebrow" id="ey3">Converging</div>
-  <div class="card narrative" id="n3">Three ships working the same stretch of the Embarcadero: the Afoundria inbound from the Gate for Oakland, the Washington up from Anchorage 9 to dock at Pier 15-17, and the American Producer, down from Port Chicago, bound for Anchorage 9 for bunkers.</div>
+  <div class="card narrative" id="n3">Three ships working the same stretch of the Embarcadero: the Afoundria inbound from the Gate for Oakland, the M M Dant up from Anchorage 9, swinging a full circle to come in to Pier 15-17, and the American Producer, down from Port Chicago, bound for Anchorage 9 for bunkers.</div>
 
   <div class="card eyebrow" id="ey4">Down bound</div>
   <div class="card narrative" id="n4a">Six thousand shaft horsepower. One propeller. No bow thruster.</div>
-  <div class="card narrative" id="n4b">Loaded near her full displacement, she was sluggish. The swing toward Anchorage 9 begins.</div>
+  <div class="card narrative" id="n4b">The M M Dant, up from under the Bay Bridge and turning for her berth, comes up on her port side. A few hundred feet of water between them.</div>
 
   <div class="card eyebrow" id="ey5">The turn</div>
-  <div class="card narrative" id="n5a">She cannot complete the turn.</div>
+  <div class="card narrative" id="n5a">The Dant clears her. The Producer keeps coming.</div>
   <div class="card narrative" id="n5b">Four hundred fifty-nine feet of ship. Four knots. No way to stop.</div>
 
-  <div class="card" id="impact">Allision<small>Pier 27-29 · The Embarcadero · March 1969</small></div>
+  <div class="card" id="impact">Allision<small>Pier 27-29 · The Embarcadero · March 5, 1969</small></div>
 
   <svg id="rings" viewBox="0 0 1000 420" preserveAspectRatio="xMidYMid slice">
-    <circle id="r1" cx="500" cy="300" r="60" stroke="#E84A2E"/>
-    <circle id="r2" cx="500" cy="300" r="120" stroke="#E87830"/>
-    <circle id="r3" cx="500" cy="300" r="240" stroke="#E8A830"/>
-    <circle id="r4" cx="500" cy="300" r="300" stroke="#C9B07A"/>
+    <ellipse id="r1" cx="525" cy="232" rx="82" ry="29" stroke="#E84A2E"/>
+    <ellipse id="r2" cx="525" cy="232" rx="165" ry="58" stroke="#E87830"/>
+    <ellipse id="r3" cx="525" cy="232" rx="330" ry="115" stroke="#E8A830"/>
+    <ellipse id="r4" cx="525" cy="232" rx="412" ry="144" stroke="#C9B07A"/>
   </svg>
   <div class="card eyebrow" id="ey7">What could have been</div>
   <div class="card narrative left" id="n7a">A full load of bombs, bound for Vietnam, against a wooden pier.</div>
-  <div class="card narrative left" id="n7b">The Chronicle's hazard map: total destruction from the pier north to Broadway and south to the Ferry Building. Chinatown, North Beach and Telegraph Hill in the heavy zone. The Bay Bridge itself in the moderate zone, effects reaching Oakland and Berkeley.</div>
+  <div class="card narrative left" id="n7b">The hazard map: total destruction for a quarter mile around the pier end — the neighbouring piers and the foot of Telegraph Hill. Chinatown, North Beach and the rest of the hill in the heavy zone. The Bay Bridge itself in the moderate zone, effects reaching Oakland and Berkeley.</div>
   <div class="card narrative left" id="n7c">Port Chicago, 1944: 4,600 tons of munitions, thirty-five miles away, shattered windows across the Bay Area and killed 320 men.</div>
   <div class="card" id="ring-legend">
     <h4>Devastation zone</h4>
@@ -126,11 +131,11 @@ html.render,body.render{background:transparent}
 
   <div class="card eyebrow" id="ey8">The grey ship</div>
   <div class="tblock">
-    <div class="card title" id="t8" style="font-size:clamp(17px,2.6vw,36px)">SS Washington<span class="rule"></span></div>
+    <div class="card title" id="t8" style="font-size:clamp(17px,2.6vw,36px)">SS Manderson Victory<span class="rule"></span></div>
     <div class="card detail" id="d8">
-      <span class="line" id="d8a">States Lines · California class · Newport News, 1962 · 565 feet</span>
-      <span class="line" id="d8b">Up from Anchorage 9, docking starboard side to at Pier 15-17, just west of the Bay Bridge. Her crew watched it happen.</span>
-      <span class="line" id="d8c">Later SS Mormacwave · Desert Storm veteran · Scrapped Brownsville, Texas, 2005</span>
+      <span class="line" id="d8a">Victory ship · Permanente Metals Yard No. 1, Richmond, California, 1944 · 455 feet</span>
+      <span class="line" id="d8b">In from the East Bay, docking just west of the Bay Bridge as it happened. Her pilot watched it — then boarded a tug to pull the Producer off.</span>
+      <span class="line" id="d8c">Ex-USS Manderson Victory, AK-230 · Okinawa, 1945 · One battle star · Farrell Lines charter · Scrapped 1993</span>
     </div>
   </div>
 
@@ -147,7 +152,7 @@ html.render,body.render{background:transparent}
     <p id="e6">Her last cargo never reached Da Nang.</p>
     <p class="sp"></p>
     <p id="e7" class="final">San Francisco was spared by chance.</p>
-    <p id="e8" class="src">SF Chronicle, March 1969 · USCG Marine Board of Investigation track diagram · MARAD vessel records · SS Washington crew account · The exact date in March 1969 remains unconfirmed · Footage generated with MiniMax H3</p>
+    <p id="e8" class="src">SF Chronicle, March 1969 · USCG Marine Board of Investigation track diagram · MARAD vessel records · A pilot's track plot and account · Footage generated with MiniMax H3</p>
   </div>
 </div>
 
@@ -174,15 +179,15 @@ const MEDIA='american_producer_1969_media/';
 const SHOTS=[
   {n:1,file:'shot1_dawn.mp4',start:0,dur:10,name:'Dawn'},
   {n:2,file:'shot2_portchicago.mp4',start:10,dur:10,name:'Port Chicago'},
-  {n:3,file:'shot3_converging.mp4',start:20,dur:8,name:'Converging'},
-  {n:4,file:'shot4_downbound.mp4',start:28,dur:10,name:'Down Bound'},
-  {n:5,file:'shot5_turn.mp4',start:38,dur:10,name:'The Turn'},
-  {n:6,file:'shot6_impact.mp4',start:48,dur:8,name:'Allision'},
-  {n:7,file:'shot7_pullback.mp4',start:56,dur:8,name:'What Could Have Been'},
-  {n:8,file:'shot8_washington.mp4',start:64,dur:6,name:'The Grey Ship'},
-  {n:9,file:'shot9_aftermath.mp4',start:70,dur:8,name:'Aftermath'}
+  {n:3,file:'shot3_converging.mp4',start:20,dur:12,name:'Converging'},
+  {n:4,file:'shot4_downbound.mp4',start:32,dur:10,name:'Down Bound'},
+  {n:5,file:'shot5_turn.mp4',start:42,dur:10,name:'The Turn'},
+  {n:6,file:'shot6_impact.mp4',start:52,dur:8,name:'Allision'},
+  {n:7,file:'shot7_pullback.mp4',start:60,dur:8,name:'What Could Have Been'},
+  {n:8,file:'shot8_washington.mp4',start:68,dur:6,name:'The Grey Ship'},
+  {n:9,file:'shot9_aftermath.mp4',start:74,dur:8,name:'Aftermath'}
 ];
-const DUR=92,IMPACT_T=51.5;
+const DUR=96,IMPACT_T=55.5;
 const stage=$('stage');
 if(!RENDER){SHOTS.forEach(s=>{const v=document.createElement('video');v.src=MEDIA+s.file;v.muted=true;v.playsInline=true;v.preload='auto';v.setAttribute('playsinline','');v.id='v'+s.n;stage.appendChild(v);s.el=v;});}
 
@@ -197,35 +202,35 @@ show('ey1',1.2,1.4);hide('ey1',5,0.8);show('m1',4.2,1.6);hide('m1',9.2,0.8);dip(
 /* 2 · the pier */
 show('t2',11.2,1.4);show('d2a',12.8,1);show('d2b',14.6,1);show('d2c',16.4,1);tl.set('#d2',{opacity:1},12.6);hide('t2',19.3,0.6);hide('d2',19.3,0.6);dip(20);
 /* 3 · converging */
-show('ey3',20.5,1);hide('ey3',27.4,0.5);show('n3',21,1);hide('n3',27.4,0.5);dip(28);
+show('ey3',20.5,1);hide('ey3',31.4,0.5);show('n3',21,1);hide('n3',31.4,0.5);dip(32);
 /* 4 · casting off */
-show('ey4',28.5,1);hide('ey4',37.4,0.5);show('n4a',29,1);hide('n4a',33.5,0.6);show('n4b',34,1);hide('n4b',37.4,0.5);
+show('ey4',32.5,1);hide('ey4',41.4,0.5);show('n4a',33,1);hide('n4a',37.5,0.6);show('n4b',38,1);hide('n4b',41.4,0.5);
 /* 5 · the turn (hard cut) */
-show('ey5',38.4,1);hide('ey5',47.4,0.5);show('n5a',38.8,1);hide('n5a',42.8,0.6);show('n5b',43.4,1);hide('n5b',47.4,0.5);
+show('ey5',42.4,1);hide('ey5',51.4,0.5);show('n5a',42.8,1);hide('n5a',46.8,0.6);show('n5b',47.4,1);hide('n5b',51.4,0.5);
 /* 6 · allision (hard cut) */
 tl.fromTo('#flash',{opacity:0},{opacity:0.9,duration:0.06,ease:'none'},IMPACT_T);tl.to('#flash',{opacity:0,duration:0.5,ease:'power2.out'},IMPACT_T+0.06);
-show('impact',IMPACT_T+0.5,0.5);hide('impact',55.3,0.6);dip(56);
+show('impact',IMPACT_T+0.5,0.5);hide('impact',59.3,0.6);dip(60);
 /* 7 · what could have been */
-show('ey7',56.5,1);hide('ey7',63.4,0.5);
-[['r1',56.6],['r2',57.4],['r3',58.2],['r4',59]].forEach(r=>{tl.fromTo('#'+r[0],{opacity:0,attr:{r:1}},{opacity:0.75,attr:{r:+$(r[0]).getAttribute('r')},duration:1.8,ease:'power2.out'},r[1]);tl.to('#'+r[0],{opacity:0,duration:0.6},63.2);});
-show('n7a',56.6,0.8);hide('n7a',58.6,0.5);show('n7b',59,0.8);hide('n7b',63.5,0.5);show('ring-legend',57.5,1);hide('ring-legend',63.4,0.5);dip(64);
+show('ey7',60.5,1);hide('ey7',67.4,0.5);
+[['r1',60.6],['r2',61.4],['r3',62.2],['r4',63]].forEach(r=>{tl.fromTo('#'+r[0],{opacity:0,attr:{rx:1,ry:1}},{opacity:0.75,attr:{rx:+$(r[0]).getAttribute('rx'),ry:+$(r[0]).getAttribute('ry')},duration:1.8,ease:'power2.out'},r[1]);tl.to('#'+r[0],{opacity:0,duration:0.6},67.2);});
+show('n7a',60.6,0.8);hide('n7a',62.6,0.5);show('n7b',63,0.8);hide('n7b',67.5,0.5);show('ring-legend',61.5,1);hide('ring-legend',67.4,0.5);dip(68);
 /* 8 · the grey ship */
-show('ey8',64.5,1);hide('ey8',69.4,0.5);show('t8',64.8,1.2);show('d8a',65.6,1);show('d8b',66.8,1);show('d8c',68,1);tl.set('#d8',{opacity:1},65.4);hide('t8',69.4,0.5);hide('d8',69.4,0.5);dip(70);
+show('ey8',68.5,1);hide('ey8',73.4,0.5);show('t8',68.8,1.2);show('d8a',69.6,1);show('d8b',70.8,1);show('d8c',72,1);tl.set('#d8',{opacity:1},69.4);hide('t8',73.4,0.5);hide('d8',73.4,0.5);dip(74);
 /* 9 · aftermath */
-show('ey9',70.5,1);hide('ey9',73.4,0.5);show('n9',71,1);hide('n9',76.6,0.6);
-[['e1',77.4],['e2',78.6],['e3',79.8],['e4',81],['e5',82],['e6',83.4],['e7',85],['e8',87]].forEach(e=>show(e[0],e[1],e[0]==='e8'?1.6:1.1));
-tl.to('#fade',{opacity:1,duration:3.2,ease:'power1.inOut'},76.4);
+show('ey9',74.5,1);hide('ey9',77.4,0.5);show('n9',75,1);hide('n9',80.6,0.6);
+[['e1',81.4],['e2',82.6],['e3',83.8],['e4',85],['e5',86],['e6',87.4],['e7',89],['e8',91]].forEach(e=>show(e[0],e[1],e[0]==='e8'?1.6:1.1));
+tl.to('#fade',{opacity:1,duration:3.2,ease:'power1.inOut'},80.4);
 tl.to('#endcards',{opacity:0,duration:1.6,ease:'power1.inOut'},DUR-1.7);
 tl.to({},{duration:0.01},DUR-0.01);
 
 /* ============================================================== audio */
 const AUTO={
-  music:[[0,0],[6,0.55],[38,0.55],[44,0.3],[48,0.3],[51.4,0],[54,0],[57,0.35],[62,0.5],[70,0.5],[72,0.15],[88,0.15],[92,0]],
-  music2:[[0,0],[70,0],[75,0.5],[88,0.5],[92,0]],
-  engine:[[0,0],[29,0],[32,1],[51.4,1],[52,0.25],[70,0.25],[71,0]]
+  music:[[0,0],[6,0.55],[42,0.55],[48,0.3],[52,0.3],[55.4,0],[58,0],[61,0.35],[66,0.5],[74,0.5],[76,0.15],[92,0.15],[96,0]],
+  music2:[[0,0],[74,0],[79,0.5],[92,0.5],[96,0]],
+  engine:[[0,0],[33,0],[36,1],[55.4,1],[56,0.25],[74,0.25],[75,0]]
 };
-const CUES=[['foghorn',1.2],['foghorn2',4.6],['horn',31],['braam',IMPACT_T-0.15],['impact',IMPACT_T],['groan',IMPACT_T+0.1],['bells',IMPACT_T+1.2]];
-const PULSES=(function(){const a=[];let t=41;while(t<IMPACT_T-0.2){a.push(t);t+=lerp(0.9,0.5,(t-41)/10.3);}return a;})();
+const CUES=[['foghorn',1.2],['foghorn2',4.6],['horn',35],['braam',IMPACT_T-0.15],['impact',IMPACT_T],['groan',IMPACT_T+0.1],['bells',IMPACT_T+1.2]];
+const PULSES=(function(){const a=[];let t=45;while(t<IMPACT_T-0.2){a.push(t);t+=lerp(0.9,0.5,(t-45)/10.3);}return a;})();
 function autoValue(track,T){const k=AUTO[track];if(T<=k[0][0])return k[0][1];for(let i=1;i<k.length;i++){if(T<=k[i][0]){const a=k[i-1],b=k[i];return lerp(a[1],b[1],(T-a[0])/(b[0]-a[0]));}}return k[k.length-1][1];}
 /* builds the whole score graph on any BaseAudioContext; returns gain nodes for the continuous layers */
 function buildScore(ctx,master,offline){
