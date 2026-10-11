@@ -23,30 +23,30 @@ html.render,body.render{background:transparent}
 #lb-top,#lb-bot{position:absolute;left:0;right:0;height:0;background:#000}
 #lb-top{top:0}#lb-bot{bottom:0}
 @media (min-aspect-ratio:16/10){#lb-top,#lb-bot{height:0}}
-.eyebrow{top:calc(6.5vh + 28px);left:0;right:0;text-align:center;font-family:var(--serif);font-weight:400;font-size:clamp(9px,1vw,13px);letter-spacing:.5em;text-transform:uppercase;color:var(--fog);text-shadow:0 1px 10px rgba(0,0,0,.9)}
-.main{top:calc(50% - var(--bar)/2);left:0;right:0;transform:translateY(-50%);text-align:center;font-family:var(--serif);font-weight:600;font-size:clamp(20px,3.6vw,48px);letter-spacing:.28em;text-transform:uppercase;color:var(--cream);text-shadow:0 2px 30px rgba(0,0,0,.9);padding:0 24px;line-height:1.15}
-.main small{display:block;margin-top:.9em;font-family:var(--serif);font-weight:400;font-size:clamp(9px,1.05vw,14px);letter-spacing:.45em;color:var(--gold)}
+.eyebrow{top:calc(6.5vh + 28px);left:0;right:0;text-align:center;font-family:var(--serif);font-weight:400;font-size:clamp(13px,1.3vw,30px);letter-spacing:.5em;text-transform:uppercase;color:var(--fog);text-shadow:0 0 3px rgba(0,0,0,.95),0 1px 14px rgba(0,0,0,.95),0 0 46px rgba(0,0,0,.85)}
+.main{top:calc(50% - var(--bar)/2);left:0;right:0;transform:translateY(-50%);text-align:center;font-family:var(--serif);font-weight:600;font-size:clamp(28px,5.04vw,67.2px);letter-spacing:.28em;text-transform:uppercase;color:var(--cream);text-shadow:0 2px 30px rgba(0,0,0,.9);padding:0 24px;line-height:1.15}
+.main small{display:block;margin-top:.9em;font-family:var(--serif);font-weight:400;font-size:clamp(14px,1.4vw,30px);letter-spacing:.45em;color:var(--gold)}
 .main:before,.main:after{content:"";display:block;width:64px;height:1px;background:var(--gold);margin:0 auto 18px;opacity:.8}
 .main:after{margin:18px auto 0}
 .main.notitle:before,.main.notitle:after{display:none}
 /* Scene 1 card runs larger than the rest: it sits alone on a quiet frame and was too small to read */
-#ey1{font-size:clamp(13px,1.6vw,22px)}
-#m1{font-size:clamp(28px,5.6vw,80px);letter-spacing:.24em;text-shadow:0 2px 12px rgba(0,0,0,.95),0 2px 40px rgba(0,0,0,.9)}
-#m1 small{font-size:clamp(14px,1.9vw,26px);margin-top:.8em;text-shadow:0 1px 8px rgba(0,0,0,.95),0 1px 24px rgba(0,0,0,.9)}
+#ey1{font-size:clamp(18.2px,2.24vw,30.8px)}
+#m1{font-size:clamp(39.2px,7.84vw,112px);letter-spacing:.24em;text-shadow:0 2px 12px rgba(0,0,0,.95),0 2px 40px rgba(0,0,0,.9)}
+#m1 small{font-size:clamp(19.6px,2.66vw,36.4px);margin-top:.8em;text-shadow:0 1px 8px rgba(0,0,0,.95),0 1px 24px rgba(0,0,0,.9)}
 @media (max-width:560px){#m1{letter-spacing:.14em;padding:0 12px}#m1 small{letter-spacing:.3em}}
 .tblock{position:absolute;top:calc(6.5vh + 64px);left:0;right:0;text-align:center}
 .tblock .card{position:static}
-.title{font-family:var(--serif);font-weight:600;font-size:clamp(20px,3.4vw,46px);letter-spacing:.22em;text-transform:uppercase;color:var(--cream);text-shadow:0 2px 26px rgba(0,0,0,.95);padding:0 20px;line-height:1.15}
+.title{font-family:var(--serif);font-weight:600;font-size:clamp(28px,4.76vw,64.4px);letter-spacing:.22em;text-transform:uppercase;color:var(--cream);text-shadow:0 0 4px rgba(0,0,0,.9),0 2px 26px rgba(0,0,0,.95);padding:0 20px;line-height:1.15}
 .title .rule{display:block;width:56px;height:1px;background:var(--gold);margin:14px auto 0;opacity:.85}
-.detail{margin-top:14px;text-align:center;font-family:var(--text);font-style:italic;font-weight:400;font-size:clamp(13px,1.45vw,20px);letter-spacing:.06em;color:var(--cream);text-shadow:0 1px 10px rgba(0,0,0,.95);padding:0 20px}
+.detail{margin:14px auto 0;width:fit-content;max-width:calc(100% - 40px);padding:.7em 3.2em;background:radial-gradient(closest-side,rgba(3,5,8,.62),rgba(3,5,8,.42) 60%,rgba(3,5,8,0));text-align:center;font-family:var(--text);font-style:italic;font-weight:400;font-size:clamp(18px,1.75vw,40px);letter-spacing:.06em;color:var(--cream);text-shadow:0 0 3px rgba(0,0,0,.95),0 1px 14px rgba(0,0,0,.95),0 0 46px rgba(0,0,0,.85);padding:0 20px}
 .detail .line{display:block;margin:.28em 0;line-height:1.45;opacity:0}
-.narrative{bottom:calc(var(--bar) + 6.5vh + 22px);left:50%;transform:translateX(-50%);width:min(680px,calc(100% - 40px));text-align:center;font-family:var(--text);font-style:italic;font-weight:400;font-size:clamp(15px,1.75vw,24px);line-height:1.5;color:var(--cream);text-shadow:0 1px 12px rgba(0,0,0,.95),0 0 30px rgba(0,0,0,.7);padding:.3em 1em}
-.narrative.left{left:max(4vw,22px);transform:none;text-align:left;width:min(500px,52%)}
-#impact{top:calc(50% - var(--bar)/2);left:0;right:0;transform:translateY(-50%);text-align:center;font-family:var(--serif);font-weight:400;color:#F4EEE2;font-size:clamp(30px,6.4vw,72px);letter-spacing:.42em;padding-left:.42em;text-transform:uppercase;line-height:1;text-shadow:0 0 40px rgba(255,220,180,.35),0 2px 24px rgba(0,0,0,.9)}
-#impact small{display:block;margin-top:1em;font-family:var(--serif);font-size:clamp(9px,1.05vw,14px);letter-spacing:.4em;padding-left:.4em;color:var(--gold)}
+.narrative{background:radial-gradient(closest-side,rgba(3,5,8,.62),rgba(3,5,8,.42) 60%,rgba(3,5,8,0));bottom:calc(var(--bar) + 6.5vh + 22px);left:50%;transform:translateX(-50%);width:min(1250px,calc(100% - 40px));text-align:center;font-family:var(--text);font-style:italic;font-weight:400;font-size:clamp(21px,2vw,44px);line-height:1.5;color:var(--cream);text-shadow:0 0 3px rgba(0,0,0,.95),0 1px 14px rgba(0,0,0,.95),0 0 46px rgba(0,0,0,.85);padding:.9em 2.4em}
+.narrative.left{left:max(4vw,22px);transform:none;text-align:left;width:min(900px,60%)}
+#impact{top:calc(50% - var(--bar)/2);left:0;right:0;transform:translateY(-50%);text-align:center;font-family:var(--serif);font-weight:400;color:#F4EEE2;font-size:clamp(42px,8.96vw,100.8px);letter-spacing:.42em;padding-left:.42em;text-transform:uppercase;line-height:1;text-shadow:0 0 40px rgba(255,220,180,.35),0 2px 24px rgba(0,0,0,.9)}
+#impact small{display:block;margin-top:1em;font-family:var(--serif);font-size:clamp(14px,1.4vw,30px);letter-spacing:.4em;padding-left:.4em;color:var(--gold)}
 #impact:before,#impact:after{content:"";display:block;width:90px;height:1px;background:rgba(244,238,226,.7);margin:0 auto 26px}
 #impact:after{margin:26px auto 0}
-#ring-legend{right:max(4vw,22px);top:calc(50% - var(--bar)/2);transform:translateY(-50%);width:min(270px,40vw);font-family:var(--text);font-size:clamp(12px,1.2vw,16px);line-height:1.45;color:var(--cream);background:rgba(3,5,8,.55);border-left:1px solid rgba(201,176,122,.5);padding:12px 16px;text-shadow:0 1px 4px #000}
+#ring-legend{right:max(4vw,22px);top:calc(50% - var(--bar)/2);transform:translateY(-50%);width:min(500px,44vw);font-family:var(--text);font-size:clamp(16px,1.45vw,30px);line-height:1.45;color:var(--cream);background:rgba(3,5,8,.55);border-left:1px solid rgba(201,176,122,.5);padding:12px 16px;text-shadow:0 1px 4px #000}
 #ring-legend h4{margin:0 0 10px;font-family:var(--serif);font-weight:400;letter-spacing:.35em;font-size:.72em;color:var(--gold);text-transform:uppercase}
 #ring-legend div{display:grid;grid-template-columns:10px auto;gap:0 10px;align-items:start;margin:6px 0}
 #ring-legend i{display:block;width:10px;height:10px;border-radius:50%;margin-top:5px;box-shadow:0 0 6px currentColor}
@@ -54,12 +54,12 @@ html.render,body.render{background:transparent}
 #ring-legend span{display:block}
 #rings{position:absolute;inset:0;width:100%;height:100%}
 #rings ellipse{fill:none;stroke-width:1.5;opacity:0}
-#endcards{top:calc(50% - var(--bar)/2);left:50%;transform:translate(-50%,-50%);width:min(760px,calc(100% - 40px));text-align:center;opacity:1}
-#endcards p{margin:.5em 0;font-family:var(--text);font-size:clamp(14px,1.65vw,22px);letter-spacing:.08em;line-height:1.5;color:var(--cream);opacity:0;text-shadow:0 1px 10px #000}
+#endcards{top:calc(50% - var(--bar)/2);left:50%;transform:translate(-50%,-50%);width:min(1400px,calc(100% - 40px));text-align:center;opacity:1}
+#endcards p{margin:.5em 0;font-family:var(--text);font-size:clamp(19px,1.9vw,40px);letter-spacing:.08em;line-height:1.5;color:var(--cream);opacity:0;text-shadow:0 1px 10px #000}
 #endcards p.sp{height:.5em;margin:0}
-#endcards p.stars{font-family:var(--serif);font-size:clamp(10px,1.15vw,15px);letter-spacing:.3em;color:var(--gold)}
-#endcards p.final{font-family:var(--serif);font-weight:400;font-size:clamp(20px,3.2vw,42px);letter-spacing:.3em;padding-left:.3em;text-transform:uppercase;color:var(--cream);margin-top:.8em;line-height:1.2}
-#endcards p.src{font-family:var(--serif);font-size:clamp(8px,.9vw,12px);letter-spacing:.32em;color:var(--fog);margin-top:2.2em;text-transform:uppercase}
+#endcards p.stars{font-family:var(--serif);font-size:clamp(14px,1.35vw,28px);letter-spacing:.3em;color:var(--gold)}
+#endcards p.final{font-family:var(--serif);font-weight:400;font-size:clamp(28px,4.48vw,58.8px);letter-spacing:.3em;padding-left:.3em;text-transform:uppercase;color:var(--cream);margin-top:.8em;line-height:1.2}
+#endcards p.src{font-family:var(--serif);font-size:clamp(11px,1.05vw,22px);letter-spacing:.32em;color:var(--fog);margin-top:2.2em;text-transform:uppercase}
 #flash{position:absolute;inset:0;background:#fff;opacity:0}
 #fade{position:absolute;inset:0;background:#000;opacity:0}
 #bar{position:fixed;left:0;right:0;bottom:0;height:var(--bar);display:flex;align-items:center;gap:14px;padding:0 18px;background:linear-gradient(180deg,rgba(3,5,8,0),rgba(3,5,8,.85));font-family:var(--serif);color:var(--cream);z-index:10;transition:opacity .6s;user-select:none;-webkit-user-select:none}
@@ -74,7 +74,7 @@ html.render,body.render{background:transparent}
 #progress .mk:hover:after{content:attr(data-name);position:absolute;bottom:14px;left:0;transform:translateX(-50%);font-size:9px;letter-spacing:.3em;white-space:nowrap;color:var(--gold);background:rgba(3,5,8,.85);padding:3px 8px;text-transform:uppercase}
 #progress .head{position:absolute;top:9px;width:7px;height:7px;border-radius:50%;background:var(--cream);transform:translateX(-3.5px);box-shadow:0 0 6px #000}
 #time{font-size:10px;letter-spacing:.25em;min-width:84px;text-align:right;color:var(--fog);font-variant-numeric:tabular-nums}
-@media (max-width:560px){#reset span,#snd span{display:none}#time{min-width:64px;font-size:9px}#bar{gap:8px;padding:0 10px}.detail{font-size:12px}}
+@media (max-width:560px){#reset span,#snd span{display:none}#time{min-width:64px;font-size:9px}#bar{gap:8px;padding:0 10px}.detail{font-size:16px}}
 #hint{z-index:11;position:fixed;left:50%;bottom:calc(var(--bar) + 10px);transform:translateX(-50%);font-family:var(--serif);font-size:9px;letter-spacing:.4em;color:var(--fog);opacity:0;transition:opacity .8s;pointer-events:none;text-transform:uppercase;text-shadow:0 1px 6px #000}
 #error{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:var(--black);color:var(--cream);font-family:var(--text);padding:24px;text-align:center;line-height:1.6;z-index:20;font-size:18px}
 </style>
@@ -103,7 +103,7 @@ html.render,body.render{background:transparent}
 
   <div class="card eyebrow" id="ey4">Down bound</div>
   <div class="card narrative" id="n4a">Six thousand shaft horsepower. One propeller. No bow thruster.</div>
-  <div class="card narrative" id="n4b">The M M Dant, up from under the Bay Bridge and turning for her berth, comes up on her port side. A few hundred feet of water between them.</div>
+  <div class="card narrative" id="n4b">The M M Dant, out from under the Bay Bridge, comes straight at her. Both turn to starboard. They pass port to port, almost touching.</div>
 
   <div class="card eyebrow" id="ey5">The turn</div>
   <div class="card narrative" id="n5a">The Dant clears her. The Producer keeps coming.</div>
@@ -131,7 +131,7 @@ html.render,body.render{background:transparent}
 
   <div class="card eyebrow" id="ey8">The grey ship</div>
   <div class="tblock">
-    <div class="card title" id="t8" style="font-size:clamp(17px,2.6vw,36px)">SS Manderson Victory<span class="rule"></span></div>
+    <div class="card title" id="t8" style="font-size:clamp(23.8px,3.64vw,50.4px)">SS Manderson Victory<span class="rule"></span></div>
     <div class="card detail" id="d8">
       <span class="line" id="d8a">Victory ship · Permanente Metals Yard No. 1, Richmond, California, 1944 · 455 feet</span>
       <span class="line" id="d8b">In from the East Bay, docking just west of the Bay Bridge as it happened. Her pilot watched it — then boarded a tug to pull the Producer off.</span>
@@ -177,30 +177,36 @@ if(RENDER){document.documentElement.classList.add('render');document.body.classL
 const MEDIA='american_producer_1969_media/';
 /* ------------------------------------------------ shot list (footage) */
 const SHOTS=[
-  {n:1,file:'shot1_dawn.mp4',start:0,dur:10,name:'Dawn'},
-  {n:2,file:'shot2_portchicago.mp4',start:10,dur:10,name:'Port Chicago'},
-  {n:3,file:'shot3_converging.mp4',start:20,dur:12,name:'Converging'},
-  {n:4,file:'shot4_downbound.mp4',start:32,dur:10,name:'Down Bound'},
-  {n:5,file:'shot5_turn.mp4',start:42,dur:10,name:'The Turn'},
-  {n:6,file:'shot6_impact.mp4',start:52,dur:8,name:'Allision'},
-  {n:7,file:'shot7_pullback.mp4',start:60,dur:8,name:'What Could Have Been'},
-  {n:8,file:'shot8_washington.mp4',start:68,dur:6,name:'The Grey Ship'},
-  {n:9,file:'shot9_aftermath.mp4',start:74,dur:8,name:'Aftermath'}
+  {n:1,file:'shot1_dawn.mp4',start:0,dur:15,name:'Dawn'},
+  {n:2,file:'shot2_portchicago.mp4',start:15,dur:15,name:'Port Chicago'},
+  {n:3,file:'shot3_converging.mp4',start:30,dur:18,name:'Converging'},
+  {n:4,file:'shot4_downbound.mp4',start:48,dur:20,name:'Down Bound'},
+  {n:5,file:'shot5_turn.mp4',start:68,dur:15,name:'The Turn'},
+  {n:6,file:'shot6_impact.mp4',start:83,dur:12,name:'Allision'},
+  {n:7,file:'shot7_pullback.mp4',start:95,dur:12,name:'What Could Have Been'},
+  {n:8,file:'shot8_washington.mp4',start:107,dur:9,name:'The Grey Ship'},
+  {n:9,file:'shot9_aftermath.mp4',start:116,dur:12,name:'Aftermath'}
 ];
-const DUR=96,IMPACT_T=55.5;
+const DUR=142,IMPACT_T=55.5;
+/* Third cut (11 Oct 2026): shots 50% longer (shot 4 doubled). Every cue below is still written in the
+   second cut's 96 s timeline and mapped through R(): shot boundaries old -> new, plus the moment of
+   contact in shot 6 (old 55.5 -> the new clip's contact time) so the flash stays on the hit. */
+const OLD_B=[0,10,20,32,42,52,55.5,60,68,74,82,96];
+const NEW_B=[0,15,30,48,68,83,87.9,95,107,116,128,142];
+function R(t){for(let i=1;i<OLD_B.length;i++){if(t<=OLD_B[i]){const a=OLD_B[i-1],b=OLD_B[i];return NEW_B[i-1]+(t-a)*(NEW_B[i]-NEW_B[i-1])/(b-a);}}return t-OLD_B[OLD_B.length-1]+NEW_B[NEW_B.length-1];}
 const stage=$('stage');
 if(!RENDER){SHOTS.forEach(s=>{const v=document.createElement('video');v.src=MEDIA+s.file;v.muted=true;v.playsInline=true;v.preload='auto';v.setAttribute('playsinline','');v.id='v'+s.n;stage.appendChild(v);s.el=v;});}
 
 /* ----------------------------------------------------- overlay timeline */
 const tl=gsap.timeline({paused:true,defaults:{ease:'power1.inOut',immediateRender:false}});
-const show=(id,t,d)=>tl.to('#'+id,{opacity:1,duration:d||1},t);
-const hide=(id,t,d)=>tl.to('#'+id,{opacity:0,duration:d||0.8},t);
-const dip=(t,d)=>{const dd=d||0.5;tl.to('#fade',{opacity:1,duration:dd,ease:'power1.in'},t-dd);tl.to('#fade',{opacity:0,duration:dd*1.6,ease:'power1.out'},t);};
+const show=(id,t,d)=>tl.to('#'+id,{opacity:1,duration:d||1},R(t));
+const hide=(id,t,d)=>tl.to('#'+id,{opacity:0,duration:d||0.8},R(t));
+const dip=(t0,d)=>{const t=R(t0),dd=d||0.5;tl.to('#fade',{opacity:1,duration:dd,ease:'power1.in'},t-dd);tl.to('#fade',{opacity:0,duration:dd*1.6,ease:'power1.out'},t);};
 tl.fromTo('#fade',{opacity:1},{opacity:0,duration:2.6},0);
 /* 1 · dawn */
 show('ey1',1.2,1.4);hide('ey1',5,0.8);show('m1',4.2,1.6);hide('m1',9.2,0.8);dip(10);
 /* 2 · the pier */
-show('t2',11.2,1.4);show('d2a',12.8,1);show('d2b',14.6,1);show('d2c',16.4,1);tl.set('#d2',{opacity:1},12.6);hide('t2',19.3,0.6);hide('d2',19.3,0.6);dip(20);
+show('t2',11.2,1.4);show('d2a',12.8,1);show('d2b',14.6,1);show('d2c',16.4,1);tl.set('#d2',{opacity:1},R(12.6));hide('t2',19.3,0.6);hide('d2',19.3,0.6);dip(20);
 /* 3 · converging */
 show('ey3',20.5,1);hide('ey3',31.4,0.5);show('n3',21,1);hide('n3',31.4,0.5);dip(32);
 /* 4 · casting off */
@@ -208,18 +214,18 @@ show('ey4',32.5,1);hide('ey4',41.4,0.5);show('n4a',33,1);hide('n4a',37.5,0.6);sh
 /* 5 · the turn (hard cut) */
 show('ey5',42.4,1);hide('ey5',51.4,0.5);show('n5a',42.8,1);hide('n5a',46.8,0.6);show('n5b',47.4,1);hide('n5b',51.4,0.5);
 /* 6 · allision (hard cut) */
-tl.fromTo('#flash',{opacity:0},{opacity:0.9,duration:0.06,ease:'none'},IMPACT_T);tl.to('#flash',{opacity:0,duration:0.5,ease:'power2.out'},IMPACT_T+0.06);
+tl.fromTo('#flash',{opacity:0},{opacity:0.9,duration:0.06,ease:'none'},R(IMPACT_T));tl.to('#flash',{opacity:0,duration:0.5,ease:'power2.out'},R(IMPACT_T)+0.06);
 show('impact',IMPACT_T+0.5,0.5);hide('impact',59.3,0.6);dip(60);
 /* 7 · what could have been */
 show('ey7',60.5,1);hide('ey7',67.4,0.5);
-[['r1',60.6],['r2',61.4],['r3',62.2],['r4',63]].forEach(r=>{tl.fromTo('#'+r[0],{opacity:0,attr:{rx:1,ry:1}},{opacity:0.75,attr:{rx:+$(r[0]).getAttribute('rx'),ry:+$(r[0]).getAttribute('ry')},duration:1.8,ease:'power2.out'},r[1]);tl.to('#'+r[0],{opacity:0,duration:0.6},67.2);});
+[['r1',60.6],['r2',61.4],['r3',62.2],['r4',63]].forEach(r=>{tl.fromTo('#'+r[0],{opacity:0,attr:{rx:1,ry:1}},{opacity:0.75,attr:{rx:+$(r[0]).getAttribute('rx'),ry:+$(r[0]).getAttribute('ry')},duration:1.8,ease:'power2.out'},R(r[1]));tl.to('#'+r[0],{opacity:0,duration:0.6},R(67.2));});
 show('n7a',60.6,0.8);hide('n7a',62.6,0.5);show('n7b',63,0.8);hide('n7b',67.5,0.5);show('ring-legend',61.5,1);hide('ring-legend',67.4,0.5);dip(68);
 /* 8 · the grey ship */
-show('ey8',68.5,1);hide('ey8',73.4,0.5);show('t8',68.8,1.2);show('d8a',69.6,1);show('d8b',70.8,1);show('d8c',72,1);tl.set('#d8',{opacity:1},69.4);hide('t8',73.4,0.5);hide('d8',73.4,0.5);dip(74);
+show('ey8',68.5,1);hide('ey8',73.4,0.5);show('t8',68.8,1.2);show('d8a',69.6,1);show('d8b',70.8,1);show('d8c',72,1);tl.set('#d8',{opacity:1},R(69.4));hide('t8',73.4,0.5);hide('d8',73.4,0.5);dip(74);
 /* 9 · aftermath */
 show('ey9',74.5,1);hide('ey9',77.4,0.5);show('n9',75,1);hide('n9',80.6,0.6);
 [['e1',81.4],['e2',82.6],['e3',83.8],['e4',85],['e5',86],['e6',87.4],['e7',89],['e8',91]].forEach(e=>show(e[0],e[1],e[0]==='e8'?1.6:1.1));
-tl.to('#fade',{opacity:1,duration:3.2,ease:'power1.inOut'},80.4);
+tl.to('#fade',{opacity:1,duration:3.2,ease:'power1.inOut'},R(80.4));
 tl.to('#endcards',{opacity:0,duration:1.6,ease:'power1.inOut'},DUR-1.7);
 tl.to({},{duration:0.01},DUR-0.01);
 
@@ -230,7 +236,8 @@ const AUTO={
   engine:[[0,0],[33,0],[36,1],[55.4,1],[56,0.25],[74,0.25],[75,0]]
 };
 const CUES=[['foghorn',1.2],['foghorn2',4.6],['horn',35],['braam',IMPACT_T-0.15],['impact',IMPACT_T],['groan',IMPACT_T+0.1],['bells',IMPACT_T+1.2]];
-const PULSES=(function(){const a=[];let t=45;while(t<IMPACT_T-0.2){a.push(t);t+=lerp(0.9,0.5,(t-45)/10.3);}return a;})();
+const PULSES=(function(){const a=[];let t=45;while(t<IMPACT_T-0.2){a.push(t);t+=lerp(0.9,0.5,(t-45)/10.3);}return a.map(R);})();
+Object.values(AUTO).forEach(k=>k.forEach(p=>{p[0]=R(p[0]);}));CUES.forEach(c=>{c[1]=R(c[1]);});
 function autoValue(track,T){const k=AUTO[track];if(T<=k[0][0])return k[0][1];for(let i=1;i<k.length;i++){if(T<=k[i][0]){const a=k[i-1],b=k[i];return lerp(a[1],b[1],(T-a[0])/(b[0]-a[0]));}}return k[k.length-1][1];}
 /* builds the whole score graph on any BaseAudioContext; returns gain nodes for the continuous layers */
 function buildScore(ctx,master,offline){
