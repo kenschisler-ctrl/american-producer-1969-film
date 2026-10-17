@@ -103,7 +103,7 @@ html.render,body.render{background:transparent}
 
   <div class="card eyebrow" id="ey4">Down bound</div>
   <div class="card narrative" id="n4a">Six thousand shaft horsepower. One propeller. No bow thruster.</div>
-  <div class="card narrative" id="n4b">The M M Dant, out from under the Bay Bridge, comes straight at her. Both turn to starboard. They pass port to port, almost touching.</div>
+  <div class="card narrative" id="n4b">The M M Dant, out from under the Bay Bridge, comes straight at her. She turns to starboard, the Dant to port, and they swing in together, almost touching.</div>
 
   <div class="card eyebrow" id="ey5">The turn</div>
   <div class="card narrative" id="n5a">The Dant clears her. The Producer keeps coming.</div>
@@ -112,10 +112,12 @@ html.render,body.render{background:transparent}
   <div class="card" id="impact">Allision<small>Pier 27-29 · The Embarcadero · March 5, 1969</small></div>
 
   <svg id="rings" viewBox="0 0 1000 420" preserveAspectRatio="xMidYMid slice">
-    <ellipse id="r1" cx="525" cy="232" rx="82" ry="29" stroke="#E84A2E"/>
-    <ellipse id="r2" cx="525" cy="232" rx="165" ry="58" stroke="#E87830"/>
-    <ellipse id="r3" cx="525" cy="232" rx="330" ry="115" stroke="#E8A830"/>
-    <ellipse id="r4" cx="525" cy="232" rx="412" ry="144" stroke="#C9B07A"/>
+    <g id="ringgrp">
+    <ellipse id="r1" cx="680" cy="232" rx="138" ry="36" stroke="#E84A2E"/>
+    <ellipse id="r2" cx="680" cy="232" rx="275" ry="72" stroke="#E87830"/>
+    <ellipse id="r3" cx="680" cy="232" rx="550" ry="143" stroke="#E8A830"/>
+    <ellipse id="r4" cx="680" cy="232" rx="688" ry="179" stroke="#C9B07A"/>
+    </g>
   </svg>
   <div class="card eyebrow" id="ey7">What could have been</div>
   <div class="card narrative left" id="n7a">A full load of bombs, bound for Vietnam, against a wooden pier.</div>
@@ -181,18 +183,19 @@ const SHOTS=[
   {n:2,file:'shot2_portchicago.mp4',start:15,dur:15,name:'Port Chicago'},
   {n:3,file:'shot3_converging.mp4',start:30,dur:18,name:'Converging'},
   {n:4,file:'shot4_downbound.mp4',start:48,dur:20,name:'Down Bound'},
-  {n:5,file:'shot5_turn.mp4',start:68,dur:15,name:'The Turn'},
-  {n:6,file:'shot6_impact.mp4',start:83,dur:12,name:'Allision'},
-  {n:7,file:'shot7_pullback.mp4',start:95,dur:12,name:'What Could Have Been'},
-  {n:8,file:'shot8_washington.mp4',start:107,dur:9,name:'The Grey Ship'},
-  {n:9,file:'shot9_aftermath.mp4',start:116,dur:12,name:'Aftermath'}
+  {n:5,file:'shot5_turn.mp4',start:68,dur:10,name:'The Turn'},
+  {n:55,file:'shot5b_alone.mp4',start:78,dur:15,name:'Coming In'},
+  {n:6,file:'shot6_impact.mp4',start:93,dur:12,name:'Allision'},
+  {n:7,file:'shot7_pullback.mp4',start:105,dur:12,name:'What Could Have Been'},
+  {n:8,file:'shot8_washington.mp4',start:117,dur:9,name:'The Grey Ship'},
+  {n:9,file:'shot9_aftermath.mp4',start:126,dur:12,name:'Aftermath'}
 ];
-const DUR=142,IMPACT_T=55.5;
-/* Third cut (11 Oct 2026): shots 50% longer (shot 4 doubled). Every cue below is still written in the
+const DUR=152,IMPACT_T=55.5;
+/* Third cut (11 Oct 2026): shots 50% longer (shot 4 doubled); second-cut shot 5 kept at 10 s, then the Producer-alone shot (15 s). Every cue below is still written in the
    second cut's 96 s timeline and mapped through R(): shot boundaries old -> new, plus the moment of
    contact in shot 6 (old 55.5 -> the new clip's contact time) so the flash stays on the hit. */
-const OLD_B=[0,10,20,32,42,52,55.5,60,68,74,82,96];
-const NEW_B=[0,15,30,48,68,83,87.9,95,107,116,128,142];
+const OLD_B=[0,10,20,32,42,47,52,55.5,60,68,74,82,96];
+const NEW_B=[0,15,30,48,68,78,93,97.9,105,117,126,138,152];
 function R(t){for(let i=1;i<OLD_B.length;i++){if(t<=OLD_B[i]){const a=OLD_B[i-1],b=OLD_B[i];return NEW_B[i-1]+(t-a)*(NEW_B[i]-NEW_B[i-1])/(b-a);}}return t-OLD_B[OLD_B.length-1]+NEW_B[NEW_B.length-1];}
 const stage=$('stage');
 if(!RENDER){SHOTS.forEach(s=>{const v=document.createElement('video');v.src=MEDIA+s.file;v.muted=true;v.playsInline=true;v.preload='auto';v.setAttribute('playsinline','');v.id='v'+s.n;stage.appendChild(v);s.el=v;});}
@@ -219,7 +222,7 @@ show('impact',IMPACT_T+0.5,0.5);hide('impact',59.3,0.6);dip(60);
 /* 7 · what could have been */
 show('ey7',60.5,1);hide('ey7',67.4,0.5);
 [['r1',60.6],['r2',61.4],['r3',62.2],['r4',63]].forEach(r=>{tl.fromTo('#'+r[0],{opacity:0,attr:{rx:1,ry:1}},{opacity:0.75,attr:{rx:+$(r[0]).getAttribute('rx'),ry:+$(r[0]).getAttribute('ry')},duration:1.8,ease:'power2.out'},R(r[1]));tl.to('#'+r[0],{opacity:0,duration:0.6},R(67.2));});
-show('n7a',60.6,0.8);hide('n7a',62.6,0.5);show('n7b',63,0.8);hide('n7b',67.5,0.5);show('ring-legend',61.5,1);hide('ring-legend',67.4,0.5);dip(68);
+tl.fromTo('#ringgrp',{x:0,y:0,scale:1},{x:-160,y:65,scale:1.6,transformOrigin:'680px 232px',duration:R(67.4)-R(60.6),ease:'none'},R(60.6));show('n7a',60.6,0.8);hide('n7a',62.6,0.5);show('n7b',63,0.8);hide('n7b',67.5,0.5);show('ring-legend',61.5,1);hide('ring-legend',67.4,0.5);dip(68);
 /* 8 · the grey ship */
 show('ey8',68.5,1);hide('ey8',73.4,0.5);show('t8',68.8,1.2);show('d8a',69.6,1);show('d8b',70.8,1);show('d8c',72,1);tl.set('#d8',{opacity:1},R(69.4));hide('t8',73.4,0.5);hide('d8',73.4,0.5);dip(74);
 /* 9 · aftermath */
