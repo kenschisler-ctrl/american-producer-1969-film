@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Clip 4 — H3 vs Gemini Omni</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Cormorant+Garamond:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--gold:#C9B07A;--cream:#EFE7D6;--fog:#9FB0C2;--black:#070a0e}
+*{box-sizing:border-box}
+body{margin:0;background:var(--black);color:var(--cream);font-family:'Cormorant Garamond',Georgia,serif}
+header{padding:26px 22px 6px;max-width:1500px;margin:0 auto}
+h1{font-family:'Cinzel',Georgia,serif;font-weight:600;letter-spacing:.14em;text-transform:uppercase;font-size:clamp(16px,2vw,24px);margin:0 0 10px;color:var(--cream)}
+p.lead{margin:0;font-size:clamp(15px,1.5vw,19px);line-height:1.55;color:var(--fog);max-width:70ch}
+main{max-width:1500px;margin:0 auto;padding:18px 22px 60px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(440px,1fr));gap:26px;margin-top:18px}
+figure{margin:0}
+video{width:100%;height:auto;display:block;background:#000;border-radius:3px}
+figcaption{padding:10px 2px 0;font-size:16px;line-height:1.5}
+figcaption b{font-family:'Cinzel',Georgia,serif;font-weight:600;letter-spacing:.1em;font-size:14px;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:5px}
+.note{margin-top:34px;padding:16px 18px;border-left:2px solid rgba(201,176,122,.5);background:rgba(255,255,255,.035);font-size:16px;line-height:1.6;color:var(--fog);max-width:80ch}
+.note b{color:var(--cream)}
+a{color:var(--gold)}
+</style>
+</head>
+<body>
+<header>
+  <h1>Clip 4 — two takes</h1>
+  <p class="lead">The same opening still and the same direction, rendered by two different models. Both are the
+  first half of clip 4 (10 seconds): the near miss pushed out into the bay, waterfront small at the left,
+  the Afoundria crossing behind.</p>
+</header>
+<main>
+  <div class="grid">
+    <figure>
+      <video src="clip4_h3.mp4" controls preload="metadata" playsinline></video>
+      <figcaption><b>1 · MiniMax H3</b>The take that is in the cut now. 21:9, 2944&times;1248, silent.</figcaption>
+    </figure>
+    <figure>
+      <video src="clip4_omni.mp4" controls preload="metadata" playsinline></video>
+      <figcaption><b>2 · Gemini Omni Flash 1.1</b>Alternative take. 16:9, 1920&times;1080, with native audio.</figcaption>
+    </figure>
+  </div>
+  <figure style="margin-top:30px">
+    <video src="clip4_h3_vs_omni.mp4" controls preload="metadata" playsinline></video>
+    <figcaption><b>Both, stacked</b>H3 on top, Omni below, running together.</figcaption>
+  </figure>
+  <div class="note">
+    <b>Two things to weigh beyond the picture.</b> Omni maxes out at <b>10 seconds</b>, so a 20-second shot
+    has to be two joined halves — which is how clip 4 is already built. And it only renders <b>16:9</b>, not the
+    film's 21:9, so using it would mean cropping the top and bottom off every frame or changing the film's shape.
+    H3 gives 21:9 natively and runs to 15 seconds.
+  </div>
+</main>
+</body>
+</html>
