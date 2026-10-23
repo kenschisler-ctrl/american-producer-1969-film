@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>DontRefi homepage: Spark vs GitHub</title>
+<style>
+  body { margin: 0; font: 16px/1.5 -apple-system, system-ui, sans-serif; background: #111; color: #eee; }
+  header { padding: 20px 24px 8px; }
+  h1 { font-size: 20px; margin: 0 0 6px; }
+  p { margin: 4px 0; color: #bbb; }
+  nav a { color: #9cf; margin-right: 16px; }
+  section { padding: 16px 24px; }
+  h2 { font-size: 17px; margin: 0 0 10px; }
+  .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .pair.phone { grid-template-columns: 1fr 1fr; max-width: 900px; }
+  figure { margin: 0; }
+  figcaption { font-weight: 600; margin-bottom: 6px; }
+  figcaption small { font-weight: 400; color: #aaa; }
+  img { width: 100%; height: auto; display: block; border: 1px solid #333; background: #fff; }
+  @media (max-width: 700px) { .pair { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<header>
+  <h1>DontRefi homepage: the two versions to choose between</h1>
+  <p>Both built on 23 Oct 2026 from the two diverged copies of <code>main</code>. Left is the Spark's checkout, which is what the live site rebuilds from every Thursday. Right is GitHub's main (Codex's Scenario Desk homepage).</p>
+  <nav><a href="#desktop">Desktop</a><a href="#phone">Phone</a></nav>
+</header>
+<section id="desktop">
+  <h2>Desktop, 1440 px wide</h2>
+  <div class="pair">
+    <figure><figcaption>A. Spark (live now) <small>quick-read hero, 2 Oct morning</small></figcaption><img src="spark-desktop.png" alt="Spark version, desktop"></figure>
+    <figure><figcaption>B. GitHub main <small>Scenario Desk homepage, 2 Oct evening</small></figcaption><img src="github-desktop.png" alt="GitHub version, desktop"></figure>
+  </div>
+</section>
+<section id="phone">
+  <h2>Phone, 390 px wide</h2>
+  <div class="pair phone">
+    <figure><figcaption>A. Spark (live now)</figcaption><img src="spark-phone.png" alt="Spark version, phone"></figure>
+    <figure><figcaption>B. GitHub main</figcaption><img src="github-phone.png" alt="GitHub version, phone"></figure>
+  </div>
+</section>
+</body>
+</html>
