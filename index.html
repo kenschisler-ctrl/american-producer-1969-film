@@ -182,23 +182,24 @@ const SHOTS=[
   {n:1,file:'shot1_dawn.mp4',start:0,dur:15,name:'Dawn'},
   {n:2,file:'shot2_portchicago.mp4',start:15,dur:15,name:'Port Chicago'},
   {n:3,file:'shot3_converging.mp4',start:30,dur:18,name:'Converging'},
-  {n:4,file:'shot4_downbound.mp4',start:48,dur:20,name:'Down Bound'},
-  {n:5,file:'shot5_turn.mp4',start:68,dur:10,name:'The Turn'},
-  {n:55,file:'shot5b_alone.mp4',start:78,dur:15,name:'Coming In'},
-  {n:6,file:'shot6_impact.mp4',start:93,dur:12,name:'Allision'},
-  {n:7,file:'shot7_pullback.mp4',start:105,dur:12,name:'What Could Have Been'},
-  {n:8,file:'shot8_washington.mp4',start:117,dur:9,name:'The Grey Ship'},
-  {n:9,file:'shot9_aftermath.mp4',start:126,dur:12,name:'Aftermath'}
+  {n:4,file:'shot4_downbound.mp4',start:48,dur:15,name:'Head-On'},
+  {n:5,file:'shot5_turn.mp4',start:63,dur:7,name:'Between Them'},
+  {n:55,file:'shot5b_alone.mp4',start:70,dur:15,name:'Coming In'},
+  {n:6,file:'shot6_impact.mp4',start:85,dur:15,name:'Allision'},
+  {n:7,file:'shot7_pullback.mp4',start:100,dur:12,name:'What Could Have Been'},
+  {n:8,file:'shot8_washington.mp4',start:112,dur:9,name:'The Grey Ship'},
+  {n:9,file:'shot9_aftermath.mp4',start:121,dur:15,name:'Aftermath'}
 ];
-const DUR=152,IMPACT_T=55.5;
-/* Third cut (11 Oct 2026): shots 50% longer (shot 4 doubled); second-cut shot 5 kept at 10 s, then the Producer-alone shot (15 s). Every cue below is still written in the
+const DUR=150,IMPACT_T=55.5;
+/* Fifth cut (26 Oct 2026): clips 4-10 rebuilt from Ken's notes and drawing; contact in the new clip 7 at 9.9 s.
+   Third cut (11 Oct 2026): shots 50% longer (shot 4 doubled); second-cut shot 5 kept at 10 s, then the Producer-alone shot (15 s). Every cue below is still written in the
    second cut's 96 s timeline and mapped through R(): shot boundaries old -> new, plus the moment of
    contact in shot 6 (old 55.5 -> the new clip's contact time) so the flash stays on the hit. */
 const OLD_B=[0,10,20,32,42,47,52,55.5,60,68,74,82,96];
-const NEW_B=[0,15,30,48,68,78,93,97.9,105,117,126,138,152];
+const NEW_B=[0,15,30,48,63,70,85,94.9,100,112,121,136,150];
 function R(t){for(let i=1;i<OLD_B.length;i++){if(t<=OLD_B[i]){const a=OLD_B[i-1],b=OLD_B[i];return NEW_B[i-1]+(t-a)*(NEW_B[i]-NEW_B[i-1])/(b-a);}}return t-OLD_B[OLD_B.length-1]+NEW_B[NEW_B.length-1];}
 const stage=$('stage');
-if(!RENDER){SHOTS.forEach(s=>{const v=document.createElement('video');v.src=MEDIA+s.file;v.muted=true;v.playsInline=true;v.preload='auto';v.setAttribute('playsinline','');v.id='v'+s.n;stage.appendChild(v);s.el=v;});}
+if(!RENDER){SHOTS.forEach(s=>{const v=document.createElement('video');v.src=MEDIA+s.file+'?v=20261026';v.muted=true;v.playsInline=true;v.preload='auto';v.setAttribute('playsinline','');v.id='v'+s.n;stage.appendChild(v);s.el=v;});}
 
 /* ----------------------------------------------------- overlay timeline */
 const tl=gsap.timeline({paused:true,defaults:{ease:'power1.inOut',immediateRender:false}});
